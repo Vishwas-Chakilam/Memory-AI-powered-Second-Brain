@@ -1,0 +1,5 @@
+{
+  "name": "Memory",
+  "description": "A private, AI-powered memory bank that organizes itself.",
+  "requestFramePermissions": []
+}

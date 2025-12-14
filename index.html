@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Memory - Your Second Brain</title>
+    <meta name="description" content="Your private AI-powered second brain that auto-organizes information" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Memory" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Memory" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/onboarding_logo.jpg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            },
+            colors: {
+              apple: {
+                gray: '#f5f5f7',
+                text: '#1d1d1f',
+              },
+              dark: {
+                bg: '#000000',
+                card: '#1c1c1e',
+                border: '#2c2c2e',
+                text: '#f5f5f7',
+                subtext: '#86868b'
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/onboarding_logo.jpg" type="image/jpeg" />
+    <link rel="apple-touch-icon" href="/onboarding_logo.jpg" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/onboarding_logo.jpg" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/onboarding_logo.jpg" />
+    <style>
+      body {
+        background-color: #fcfcfc;
+        color: #1d1d1f;
+        -webkit-font-smoothing: antialiased;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      .dark body {
+        background-color: #000000;
+        color: #f5f5f7;
+      }
+      /* Hide scrollbar for clean look */
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.26"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+  <script>
+    // Verify manifest is accessible
+    fetch('/manifest.json')
+      .then(res => {
+        if (res.ok) {
+          console.log('✅ Manifest.json is accessible');
+          return res.json();
+        } else {
+          console.error('❌ Manifest.json not accessible:', res.status);
+        }
+      })
+      .then(manifest => {
+        if (manifest) {
+          console.log('✅ Manifest loaded:', manifest.name);
+          if (manifest.icons && manifest.icons.length > 0) {
+            console.log('✅ Icons configured:', manifest.icons.length);
+          }
+        }
+      })
+      .catch(err => {
+        console.error('❌ Error loading manifest:', err);
+      });
+  </script>
+</body>
+</html>
