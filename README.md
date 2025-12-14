@@ -7,7 +7,7 @@
 A Progressive Web App (PWA) that uses Google Gemini AI to act as your second brain, automatically organizing information just like mymind.
 
 **Created by:** [Vishwas Chakilam](https://github.com/vishwas-chakilam)  
-**Email:** vishwas.chakilam@gmail.com
+**Email:** work.vishwas1@gmail.com
 
 ## Features
 
